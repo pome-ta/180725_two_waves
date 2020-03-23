@@ -80,7 +80,6 @@ class Sketch(ui.View):
     self.noise.set_seed(random())
     
   def draw(self):
-    self.set_needs_display()
     line_num = 80
     segment = 92
     amp = self.height/8
@@ -100,7 +99,7 @@ class Sketch(ui.View):
       line.stroke()
   
   def update(self):
-    self.draw()
+    self.set_needs_display()
     self.time += 1
   
   def get_size(self, frame):

@@ -80,7 +80,6 @@ class Sketch(ui.View):
     self.noise.modul_seed(random())
     
   def draw(self):
-    self.set_needs_display()
     ui.set_color(1)
     line = ui.Path()
     line.line_width = 1
@@ -98,7 +97,7 @@ class Sketch(ui.View):
     line.stroke()
   
   def update(self):
-    self.draw()
+    self.set_needs_display()
     self.time += 1
   
   def get_size(self, frame):

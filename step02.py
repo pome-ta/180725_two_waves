@@ -15,7 +15,6 @@ class Sketch(ui.View):
     self.update_interval = 1 / self.time_div
     
   def draw(self):
-    self.set_needs_display()
     ui.set_color(1)
     line = ui.Path()
     line.line_width = 8
@@ -30,7 +29,7 @@ class Sketch(ui.View):
     line.stroke()
   
   def update(self):
-    self.draw()
+    self.set_needs_display()
     self.time += 1
   
   def get_size(self, frame):
