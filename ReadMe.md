@@ -1,3 +1,34 @@
+# Pythonista でクリエイティブコーデング
+
+iPhone アプリの[Pythonista 3](http://omz-software.com/pythonista/) を使用し以下の記事内容を移植
+
+
+> Fork の使い方を理解していないので、何かありましたらお知らせください 🙇‍♂️
+
+
+## `step01 ~ 06.py`
+
+記事のステップに合わせてファイルを分けています
+
+
+### `ui` モジュール
+
+試行錯誤したので、step ごとに若干記載内容に違いあり
+
+
+
+ライブ感をお楽しみ下さい。
+
+
+### perlin コード
+
+
+記事内の JSライブラリ [simplenoise](https://www.npmjs.com/package/simplenoise) をPython に書き換え、perlin 部分のみ抜き出し
+
+
+
+
+
 # 記事
 
 [JavaScriptで取り組むクリエイティブコーディング – パーティクル表現入門 \- ICS MEDIA](https://ics.media/entry/18835)
