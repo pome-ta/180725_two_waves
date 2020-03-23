@@ -68,6 +68,7 @@ class Noise:
 MAIN_COLOR = .256
 
 
+
 class Sketch(ui.View):
   def __init__(self, parent):
     parent.add_subview(self)
@@ -80,19 +81,22 @@ class Sketch(ui.View):
     self.noise.set_seed(random())
     
   def draw(self):
-    line_num = 80
-    segment = 92
-    amp = self.height/8
+    line_num = 128
+    segment = 128
+    amp = self.height/4
+    perlin2 = self.noise.perlin2
     for j in range(line_num):
       line = ui.Path()
       line.line_width = 1
+      move_to = line.move_to
+      line_to = line.line_to
       for i in range(segment):
-        x = (i/(segment-1)) *self.width
-        px = i/(32 + j)
-        py = j/40 + (self.time / self.time_div)
-        y = amp *self.noise.perlin2(px, py) + self.height / 2
-        if i: line.line_to(x, y)
-        else: line.move_to(x, y)
+        x = (i / (segment - 1)) *self.width
+        px = i / (56 + j)
+        py = j / 56 + (self.time / self.time_div)
+        y = amp *perlin2(px, py) + self.height / 2
+        if i: line_to(x, y)
+        else: move_to(x, y)
       h = j/line_num
       rgb = hls_to_rgb(h, h, 1)
       ui.set_color(rgb)
